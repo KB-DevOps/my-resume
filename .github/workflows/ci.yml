@@ -1,9 +1,11 @@
 name: Resume ci Build
+
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,20 +22,17 @@ jobs:
     - name: Push Image 
       run: docker push  ${{secrets.REGISTRY_USERNAME}}/my-image-name:${{github.run_number}}
     
-  deploy:
-
+    deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      name: SSH to Server 
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-      host: ${{secrets.HOST}}
-      username: ${{vars.username}}
-      key: ${{secrets.KEY}}
-      script: |
-              docker stop resume || echo ""
-              docker rm resume || echo ""
-              docker run -d --name resume -p 8080:5001 ${{secrets.REGISTRY_USERNAME}}/my-image-name:${{github.run_number}}
-   
-    
+      - name: SSH to Server 
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ vars.username }}
+          key: ${{ secrets.KEY }}
+          script: |
+            docker stop resume || echo ""
+            docker rm resume || echo ""
+            docker run -d --name resume -p 8080:5001 ${{ secrets.REGISTRY_USERNAME }}/my-image-name:${{ github.run_number }}
