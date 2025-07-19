@@ -1,6 +1,6 @@
 name: Resume ci Build
 
-on:
+#on:
   #push:
     #branches: [ "main" ]
   #pull_request:
