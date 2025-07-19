@@ -5,6 +5,10 @@ on:
     pull_request:
         branches: [ "main" ]
 
+
+permissions:
+            contents: read # to checkout code
+            id-token: write # to assume role in AWS
 env:
     AWS_REGION: us-east-1
     AWS_ACTION_ROLE: ${{ secrets.AWS_ACTION_ROLE }}
@@ -12,6 +16,7 @@ env:
 jobs:
     build:
         runs-on: ubuntu-latest #github-hosted runner
+        
         steps:
           - name: clone repo
             uses: actions/checkout@v3
