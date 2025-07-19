@@ -1,6 +1,5 @@
 name: build push and deploy image
 on:
-    workflow_dispatch: # Allows manual triggering of the workflow
     push:
         branches: [ "main" ]
     pull_request:
@@ -8,7 +7,7 @@ on:
 
 env:
     AWS_REGION: us-east-1
-    AWS_ROLE: ${{ secrets.AWS_ROLE }}
+    AWS_ACTION_ROLE: ${{ secrets.AWS_ACTION_ROLE }}
 
 jobs:
     build:
@@ -19,7 +18,7 @@ jobs:
           - name: AWS creds config
             uses: aws-actions/configure-aws-credentials@v3
             with:
-               role-to-assume: ${{ env.AWS_ROLE }}   #Open ID connect 
+               role-to-assume: ${{ env.AWS_ACTION_ROLE }}   #Open ID connect 
                aws-region: ${{ env.AWS_REGION }}
           - name: Login to ECR
             uses: aws-actions/amazon-ecr-login@v1 
