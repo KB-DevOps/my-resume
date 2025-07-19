@@ -57,7 +57,7 @@ jobs:
             uses: aws-actions/amazon-ecs-deploy-task-definition@v1
             with:
                 task-definition: path/to/ecs-task-def.json # Path to your ECS task definition file
-                service: my-ecs-service # Name of your ECS service
-                cluster: my-ecs-cluster # Name of your ECS cluster
+                service: nginx-service # Name of your ECS service
+                cluster: nginx-cluster # Name of your ECS cluster
                 wait-for-service-stability: true
                 image: ${{ env.IMAGE }} # Image from the build job            
