@@ -59,6 +59,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: ${{ env.AWS_ACTION_ROLE }}
+          aws-region: ${{ env.AWS_REGION }}
+
       - name: Download current task definition
         run: |
           aws ecs describe-task-definition --task-definition ${{ env.TASK_DEFINITION }} \
