@@ -1,5 +1,4 @@
 name: build push and deploy image
-
 on:
   push:
     branches: [ "main" ]
