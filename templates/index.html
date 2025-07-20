@@ -15,17 +15,18 @@
             --primary: #4cc9f0;
             --secondary: #4361ee;
             --accent: #3a86ff;
-            --dark: #0d1b2a;
-            --darker: #1b263b;
+            --dark: #181a1b;
+            --darker: #101113;
             --light: #f8f9fa;
             --muted: #adb5bd;
-            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-bg: rgba(30, 34, 38, 0.96); /* almost black, semi-opaque */
+            --section-bg: rgba(25, 28, 31, 1); /* section background, dark */
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--dark), var(--darker));
+            background: var(--dark);
             color: var(--light);
             line-height: 1.6;
             margin: 0;
@@ -48,14 +49,14 @@
             border-radius: 16px;
             backdrop-filter: blur(10px);
             margin-bottom: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(67, 97, 238, 0.15);
+            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.10);
             transition: var(--transition);
         }
 
         .header:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(67, 97, 238, 0.13);
         }
 
         h1 {
@@ -78,21 +79,21 @@
 
         /* Section Styles */
         .section {
-            background: var(--card-bg);
+            background: var(--section-bg);
             padding: 2rem;
             border-radius: 16px;
             margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid #23272b;
             transition: var(--transition);
         }
 
         .section:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 25px rgba(67, 97, 238, 0.07);
         }
 
         h2 {
-            color: var(--accent);
+            color: var(--primary);
             font-size: 1.8rem;
             font-weight: 600;
             margin-top: 0;
@@ -114,15 +115,16 @@
 
         /* Experience Section */
         .experience-item {
-            background: rgba(255, 255, 255, 0.03);
+            background: var(--card-bg);
             padding: 1.5rem;
             border-radius: 12px;
             margin-bottom: 1.5rem;
             transition: var(--transition);
+            border: 1px solid #23272b;
         }
 
         .experience-item:hover {
-            background: rgba(255, 255, 255, 0.07);
+            background: #212529;
             transform: translateY(-3px);
         }
 
@@ -144,7 +146,7 @@
         .experience-date {
             color: var(--muted);
             font-size: 0.9rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: #23272b;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
         }
@@ -152,6 +154,7 @@
         ul {
             padding-left: 1.5rem;
             margin: 1rem 0;
+            color: var(--light);
         }
 
         li {
@@ -183,12 +186,12 @@
             font-size: 0.9rem;
             font-weight: 500;
             transition: var(--transition);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.10);
         }
 
         .skill:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.25);
         }
 
         /* Projects Section */
@@ -215,7 +218,7 @@
             border-radius: 50px;
             font-weight: 600;
             transition: var(--transition);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.20);
             border: none;
             cursor: pointer;
             margin-top: 1rem;
@@ -223,7 +226,7 @@
 
         .download-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 25px rgba(67, 97, 238, 0.25);
             background: linear-gradient(90deg, var(--secondary), var(--accent));
         }
 
@@ -263,20 +266,20 @@
     <div class="container">
         <header class="header">
             <h1>Kirubel Demissie</h1>
-            <p>DevOps & Cloud Engineer | Elkridge, MD</p>
-            <p>Kirubel.fd@gmail.com &bull; 301-300-4778</p>
-            <p>AWS Certified | US Citizen</p>
+            <p>DevOps & Cloud Engineer</p>
+            <p>Elkridge, MD &bull; 301-300-4778 &bull; Kirubel.fd@gmail.com</p>
+            <p>US Citizen</p>
         </header>
 
         <section class="section summary">
             <h2>Professional Summary</h2>
             <p>
-                AWS-Certified DevOps Engineer with 6+ years of hands-on experience in cloud infrastructure, CI/CD, Kubernetes, and automation. Proven track record optimizing deployments, cutting cloud costs by 60%, and leading Terraform/K8s initiatives. Skilled in building scalable systems on AWS and driving DevOps culture across cross-functional teams.
+                Results-driven DevOps Engineer with 6 years of proven impact designing, automating, and scaling cloud-native infrastructure across AWS, Azure, and GCP. Recognized for driving cost reductions of up to 60% and accelerating deployments by 20%+ with Kubernetes, Terraform, and Ansible. Skilled collaborator and mentor, focused on building secure, scalable systems.
             </p>
         </section>
 
         <section class="section">
-            <h2>Skills</h2>
+            <h2>Technical Skills</h2>
             <div class="skills-list">
                 <span class="skill">AWS</span>
                 <span class="skill">Azure</span>
@@ -285,7 +288,7 @@
                 <span class="skill">Kubernetes (EKS)</span>
                 <span class="skill">Helm</span>
                 <span class="skill">Terraform</span>
-                <span class="skill">AWS CDK</span>
+                <span class="skill">CloudFormation</span>
                 <span class="skill">Ansible</span>
                 <span class="skill">GitHub Actions</span>
                 <span class="skill">Jenkins</span>
@@ -296,82 +299,69 @@
                 <span class="skill">Splunk</span>
                 <span class="skill">Bash</span>
                 <span class="skill">Python</span>
+                <span class="skill">PowerShell</span>
                 <span class="skill">Git</span>
-                <span class="skill">Gradle</span>
+                <span class="skill">GitLab</span>
             </div>
         </section>
 
         <section class="section">
-            <h2>Experience</h2>
+            <h2>Certifications & Education</h2>
+            <ul>
+                <li>AWS Certified DevOps Engineer (Nov 2025, In Progress)</li>
+                <li>Certified Kubernetes Administrator (Dec 2025, In Progress)</li>
+                <li>HashiCorp Certified: Terraform Associate (Dec 2025, In Progress)</li>
+                <li>B.S. in Dental Hygiene – University of Minnesota (2021)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Professional Experience</h2>
+            
             <article class="experience-item">
                 <div class="experience-header">
                     <div class="experience-title">DevOps Engineer – CloudX</div>
-                    <div class="experience-date">May 2023 – Present</div>
+                    <div class="experience-date">North Haven, CT | May 2023 – Present</div>
                 </div>
                 <ul>
-                    <li>Streamlined CI/CD pipelines using GitHub Actions and ArgoCD, reducing deployment times by 40%.</li>
-                    <li>Containerized microservices with Docker, deployed on Kubernetes (EKS), leading migration from legacy systems.</li>
-                    <li>Automated infrastructure provisioning and configuration with Terraform, Ansible, and AWS CDK.</li>
-                    <li>Cut AWS infrastructure costs by 60% via rightsizing, automation, and proactive monitoring.</li>
-                    <li>Implemented centralized monitoring/alerting with CloudWatch, Prometheus, and Grafana.</li>
+                    <li>Led Kubernetes adoption (AWS EKS), reducing infrastructure costs by 20% and improving scalability.</li>
+                    <li>Implemented Terraform-based IaC for multi-environment AWS infrastructure with S3/DynamoDB remote backend.</li>
+                    <li>Optimized CI/CD pipelines for Java apps with Gradle, cutting build/deploy time by 20%.</li>
+                    <li>Architected and managed AWS resources (VPCs, EC2, IAM, Load Balancers) for microservices.</li>
+                    <li>Enhanced Git workflows with branching strategies and automated CI/CD via webhooks.</li>
+                    <li>Maintained 99.9%+ uptime by proactively resolving high-priority production incidents.</li>
+                    <li>Implemented Kubernetes Ingress controllers for multiple microservices, streamlining traffic routing and simplifying external service exposure.</li>
                 </ul>
             </article>
+            
+            <article class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">Cloud Engineer – CareFirst</div>
+                    <div class="experience-date">Reston, VA | Jan 2021 – Apr 2023</div>
+                </div>
+                <ul>
+                    <li>Designed scalable, multi-cloud infrastructure (AWS, Azure, GCP) with high availability.</li>
+                    <li>Reduced non-prod cloud spend by 60% via auto shutdown and compute rightsizing.</li>
+                    <li>Developed tagging standards and real-time dashboards for cost accountability.</li>
+                    <li>Provisioned enterprise-grade infrastructure using Terraform and Ansible.</li>
+                    <li>Partnered with security and architecture teams to deploy HIPAA- and SOC 2-compliant solutions.</li>
+                    <li>Maintained and supported CI/CD pipelines for containerized and cloud-native apps.</li>
+                </ul>
+            </article>
+
             <article class="experience-item">
                 <div class="experience-header">
                     <div class="experience-title">Cloud System Administrator – Access Home Healthcare</div>
-                    <div class="experience-date">Dec 2019 – Nov 2020</div>
+                    <div class="experience-date">Owings Mills, MD | Dec 2019 – Nov 2020</div>
                 </div>
                 <ul>
-                    <li>Automated provisioning/configuration using Bash, Python, Terraform, and Ansible.</li>
-                    <li>Supported Jenkins CI/CD pipelines for automated releases and state configs.</li>
-                    <li>Managed Kubernetes clusters for high availability and fast incident response.</li>
-                    <li>Configured load balancers, automated backups, and disaster recovery.</li>
-                    <li>Deployed monitoring tools (Prometheus, Kibana) for alerting and system health.</li>
+                    <li>Automated infrastructure provisioning with Terraform, Ansible, Bash, and Python.</li>
+                    <li>Supported HIPAA-compliant Jenkins CI/CD pipelines for critical healthcare apps.</li>
+                    <li>Managed Kubernetes clusters ensuring high availability and fast incident resolution.</li>
+                    <li>Deployed observability tools (Prometheus, Grafana, Kibana, Elasticsearch) for real-time alerting.</li>
+                    <li>Implemented automated backup and disaster recovery strategies across hybrid clouds.</li>
                 </ul>
             </article>
-            <article class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">DevOps Engineer – Freelance & Personal Projects</div>
-                    <div class="experience-date">2021 – 2023</div>
-                </div>
-                <ul>
-                    <li>Migrated healthcare management systems to AWS, focusing on HIPAA compliance and high availability.</li>
-                    <li>Built and monitored serverless apps using API Gateway, Lambda, DynamoDB, S3, CloudWatch, IAM, and SNS.</li>
-                    <li>Hosted secure static sites using S3, CloudFront, Route 53, and ACM with custom domain integration.</li>
-                </ul>
-            </article>
-        </section>
-
-        <section class="section">
-            <h2>Projects</h2>
-            <article class="project-item">
-                <strong>AWS Cloud Migration (Healthcare)</strong>
-                <p>Migrated hospital management system to AWS, focusing on security (HIPAA compliance), high availability, and cost optimization. Automated deployments, set up encrypted backups, and integrated monitoring/alerts.</p>
-            </article>
-            <article class="project-item">
-                <strong>Cloud Monitoring Solution</strong>
-                <p>Configured end-to-end logging/alerting for a registration app using CloudWatch, Lambda, API Gateway, DynamoDB, S3, IAM, and SNS. Automated alarms for proactive troubleshooting.</p>
-            </article>
-            <article class="project-item">
-                <strong>Static Website Hosting (S3 + CloudFront)</strong>
-                <p>Deployed a static site with HTTPS and custom DNS using S3, CloudFront, Route 53, and AWS Certificate Manager. Automated the entire pipeline with Terraform and IAM policies.</p>
-            </article>
-        </section>
-
-        <section class="section">
-            <h2>Education & Certifications</h2>
-            <div class="education-item">
-                <strong>B.S., Dental Hygiene</strong> – University of Minnesota <br>
-                <small>2021</small>
-            </div>
-            <div class="education-item">
-                <strong>AWS Certified DevOps Engineer – Professional</strong> <br>
-                <small>Amazon Web Services, 2025</small>
-            </div>
-            <div class="education-item">
-                <strong>AWS Certified Solutions Architect</strong> <br>
-                <small>Amazon Web Services, 2020</small>
-            </div>
         </section>
 
         <footer class="section">
